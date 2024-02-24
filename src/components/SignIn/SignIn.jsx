@@ -12,6 +12,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+// import { createUserWithEmailAndPassword } from 'firebase/auth';
+// import { auth } from '../../firebaseconfig';
+// import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -31,6 +34,7 @@ function Copyright(props) {
 const defaultTheme = createTheme();
 
 export default function SignIn() {
+  // const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -38,6 +42,14 @@ export default function SignIn() {
       email: data.get('email'),
       password: data.get('password'),
     });
+  //   createUserWithEmailAndPassword(auth, data.get('email'), data.get('password'))
+  // .then((res) => {
+  //   console.log(res);
+  //   navigate(" ");  
+  // })
+  // .catch((err) => {
+  //   console.error("Error signing in:", err.message);
+  // });
   };
 
   return (
